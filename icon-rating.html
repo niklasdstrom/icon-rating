@@ -13,11 +13,11 @@ Customizable element for creating a (for now) static rating using a supplied ico
 @status alpha
 @homepage http://niklasdstrom.github.io/icon-rating
 -->
-<polymer-element name="icon-rating" attributes="icon max value">
+<polymer-element name="icon-rating" attributes="icon activeIcon max value">
   <template>
     <link rel="stylesheet" href="icon-rating.css" />
     <template repeat="{{rating in ratings}}">
-      <core-icon icon={{icon}} class="{{rating <= value ? 'active' : ''}}" > <core-icon>
+      <core-icon icon="{{rating > value ? icon : getActiveIcon() }}" class="{{rating <= value ? 'active' : ''}}" > <core-icon>
     </template>
   </template>
 
@@ -26,12 +26,30 @@ Customizable element for creating a (for now) static rating using a supplied ico
     Polymer('icon-rating', {
 
       /**
-       * The icon used for the rating must be available as a
+       * The icon used for the rating - must be available as a core-icon
        * @attribute icon
        * @type string
        * @default star
        */
       icon: "star",
+
+      /**
+       * The icon used for the active icons - if none is supplied icon is used
+       * @attribute activeIcon
+       * @type string
+       * @default null
+       */
+      activeIcon: null,
+
+      /**
+      getter method for the active Icon to default back to icon if not set.
+      */
+      getActiveIcon: function(){
+        if (this.activeIcon != null){
+          return this.activeIcon;
+        }
+        return this.icon;
+      },
 
       /**
        * The number of icons to display - also the max rating
