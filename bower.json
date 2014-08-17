@@ -1,0 +1,13 @@
+{
+  "name": "icon-rating",
+  "version": "0.0.0",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "icon-rating.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.5"
+  }
+}
