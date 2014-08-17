@@ -6,15 +6,36 @@
 
   <script src="../platform/platform.js"></script>
   <link rel="import" href="icon-rating.html">
+  <link rel="import" href="../core-iconset-svg/core-iconset-svg.html">
 
 </head>
 <body unresolved>
 
-  <p>An `icon-rating` looks like this:</p>
+  <h2>icon-rating usage</h2>
 
+  <h3>Basic</h3>
   <icon-rating value=3 ></icon-rating>
+
+  <h3>Custom number of stars</h3>
   <icon-rating max=10 value=3 ></icon-rating>
+
+  <h3>Changed icon</h3>
   <icon-rating value=4 icon="favorite"></icon-rating>
+
+  <h3>Custom svg icon (<a href="http://www.polymer-project.org/docs/elements/icons.html#roll-your-own">source</a>)</h3>
+  <core-iconset-svg id="custom-icons" iconSize="50">
+    <svg>
+      <defs>
+        <g id="fancy-circles">
+          <circle cx="25" cy="25" r="18" />
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="35" cy="40" r="6" />
+        </g>
+      </defs>
+    </svg>
+  </core-iconset-svg>
+  <icon-rating value=4 icon="custom-icons:fancy-circles"></icon-rating>
+
 
 </body>
 </html>
