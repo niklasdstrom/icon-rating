@@ -2,3 +2,10 @@
   display: block;
   color: red;
 }
+
+core-icon{
+  color: #ddd;
+}
+core-icon.active{
+  color: #777;
+}

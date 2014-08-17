@@ -1,5 +1,6 @@
 <link rel="import" href="../polymer/polymer.html">
-
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
 <!--
 Element providing solution to no problem in particular.
 
@@ -12,54 +13,42 @@ Element providing solution to no problem in particular.
 @status alpha
 @homepage http://niklasdstrom.github.io/icon-rating
 -->
-<polymer-element name="icon-rating" attributes="notitle">
-
+<polymer-element name="icon-rating" attributes="icon size max value">
   <template>
-
     <link rel="stylesheet" href="icon-rating.css" />
-
-    <content></content>
-
+    <template repeat="{{rating in ratings}}">
+      <core-icon icon={{icon}} class="{{rating <= value ? 'active' : ''}}" > <core-icon>
+    </template>
   </template>
 
   <script>
 
     Polymer('icon-rating', {
-      /**
-       * The `noevent` event is not actually fired from here,
-       * we document it as an example of documenting events.
-       *
-       * @event noevent
-       */
 
       /**
-       * The `notitle` attribute does not yet have a purpose.
-       *
-       * @attribute notitle
+       * The icon used for the rating must be available as a
+       * @attribute icon
        * @type string
+       * @default star
        */
-      notitle: '',
+      icon: "star",
 
       /**
-       * The `aProp` is a property that does something cool.
-       *
-       * @property aProp
-       * @type bool
+       * The number of icons to display - also the max rating
+       * @attribute max
+       * @type integer
+       * @default 5
        */
-      aProp: false,
+      max: 5,
 
-      ready: function() {
-      },
-
-      /**
-       * The `task` method does no work at this time.
-       *
-       * @method task
-       * @return {Object} Returns undefined.
-       * @param {String} dummy Serves no purpose today.
-       */
-      task: function(dummy) {
+      ready: function (){
+        this.ratings = []
+        // push integers representing the rating from 1...max
+        for (var i = 1; i <= this.max; i ++){
+          this.ratings.push(i);
+        }
       }
+
 
     });
 

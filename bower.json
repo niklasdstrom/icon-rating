@@ -8,6 +8,8 @@
   ],
   "main": "icon-rating.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#~0.3.5"
+    "polymer": "Polymer/polymer#~0.3.5",
+    "core-icon": "Polymer/core-icon#~0.3.5",
+    "core-icons": "Polymer/core-icons#~0.3.5"
   }
 }
