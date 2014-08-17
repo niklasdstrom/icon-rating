@@ -1,11 +1,8 @@
 :host {
   display: block;
-  color: red;
-}
-
-core-icon{
   color: #ddd;
 }
-core-icon.active{
-  color: #777;
+
+:host .active{
+  color: #f00;
 }

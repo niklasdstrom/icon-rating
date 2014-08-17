@@ -8,6 +8,14 @@
   <link rel="import" href="icon-rating.html">
   <link rel="import" href="../core-iconset-svg/core-iconset-svg.html">
 
+  <style media="screen">
+    #styled {
+      color: #000;
+    }
+    #styled::shadow .active{
+      color: #a4c639;
+    }
+  </style>
 </head>
 <body unresolved>
 
@@ -21,6 +29,9 @@
 
   <h3>Changed icon</h3>
   <icon-rating value=4 icon="favorite"></icon-rating>
+
+  <h3>Styled</h3>
+  <icon-rating id="styled" value=4 icon="favorite" size=40></icon-rating>
 
   <h3>Custom svg icon (<a href="http://www.polymer-project.org/docs/elements/icons.html#roll-your-own">source</a>)</h3>
   <core-iconset-svg id="custom-icons" iconSize="50">
