@@ -12,11 +12,21 @@
     #styled {
       color: #000;
     }
+    #styled::shadow core-icon{
+      width: 50px;
+      height: 50px;
+    }
     #styled::shadow .active{
       color: #a4c639;
     }
     #custom-active{
       color: #f00;
+    }
+    #tripadvisor{
+      color: #589442;
+    }
+    #tripadvisor::shadow .active{
+      color: #589442;
     }
   </style>
 </head>
@@ -52,6 +62,22 @@
     </svg>
   </core-iconset-svg>
   <icon-rating value=4 icon="custom-icons:fancy-circles"></icon-rating>
+
+  <core-iconset-svg id="tripadvisor" iconSize="100">
+    <svg>
+      <defs>
+        <g id="icon"><path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M50,90c-22.1,0-40-17.9-40-40s17.9-40,40-40s40,17.9,40,40S72.1,90,50,90z"/></g>
+        <g id="active-icon">
+        	<path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M50,90c-22.1,0-40-17.9-40-40
+        		s17.9-40,40-40s40,17.9,40,40S72.1,90,50,90z"/>
+        	<circle cx="50" cy="50" r="30"/>
+        </g>
+      </defs>
+    </svg>
+  </core-iconset-svg>
+
+  <h3>Tripadvisor style</h3>
+  <icon-rating id="tripadvisor" value="3" icon="tripadvisor:icon" activeIcon="tripadvisor:active-icon"></icon-rating>
 
 
 </body>
