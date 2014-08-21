@@ -16,9 +16,11 @@ Customizable element for creating a (for now) static rating using a supplied ico
 <polymer-element name="icon-rating" attributes="icon activeIcon max value">
   <template>
     <link rel="stylesheet" href="icon-rating.css" />
-    <template repeat="{{rating in ratings}}">
-      <core-icon icon="{{rating > value ? icon : getActiveIcon() }}" class="{{rating <= value ? 'active' : ''}}" > <core-icon>
-    </template>
+    <div layout horizontal>
+      <template repeat="{{rating in ratings}}">
+        <core-icon icon="{{rating > value ? icon : getActiveIcon() }}" class="{{rating <= value ? 'active' : ''}}" > <core-icon>
+      </template>
+    </div>
   </template>
 
   <script>
