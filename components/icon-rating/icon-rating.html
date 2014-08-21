@@ -1,0 +1,77 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon/core-icon.html">
+<link rel="import" href="../core-icons/core-icons.html">
+<!--
+Customizable element for creating a (for now) static rating using a supplied icon.
+
+##### Example
+
+    <icon-rating icon="favorite" max=10 value=3></icon-rating>
+
+@element icon-rating
+@blurb Customizable element for creating a (for now) static rating using a supplied icon.
+@status alpha
+@homepage http://niklasdstrom.github.io/icon-rating
+-->
+<polymer-element name="icon-rating" attributes="icon activeIcon max value">
+  <template>
+    <link rel="stylesheet" href="icon-rating.css" />
+    <div layout horizontal>
+      <template repeat="{{rating in ratings}}">
+        <core-icon icon="{{rating > value ? icon : getActiveIcon() }}" class="{{rating <= value ? 'active' : ''}}" > <core-icon>
+      </template>
+    </div>
+  </template>
+
+  <script>
+
+    Polymer('icon-rating', {
+
+      /**
+       * The icon used for the rating - must be available as a core-icon
+       * @attribute icon
+       * @type string
+       * @default star
+       */
+      icon: "star",
+
+      /**
+       * The icon used for the active icons - if none is supplied icon is used
+       * @attribute activeIcon
+       * @type string
+       * @default null
+       */
+      activeIcon: null,
+
+      /**
+      getter method for the active Icon to default back to icon if not set.
+      */
+      getActiveIcon: function(){
+        if (this.activeIcon != null){
+          return this.activeIcon;
+        }
+        return this.icon;
+      },
+
+      /**
+       * The number of icons to display - also the max rating
+       * @attribute max
+       * @type integer
+       * @default 5
+       */
+      max: 5,
+
+      ready: function (){
+        this.ratings = []
+        // push integers representing the rating from 1...max
+        for (var i = 1; i <= this.max; i ++){
+          this.ratings.push(i);
+        }
+      }
+
+
+    });
+
+  </script>
+
+</polymer-element>

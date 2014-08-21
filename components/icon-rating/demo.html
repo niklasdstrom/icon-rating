@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>icon-rating Demo</title>
+
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="icon-rating.html">
+  <link rel="import" href="../core-iconset-svg/core-iconset-svg.html">
+
+  <style media="screen">
+    #styled {
+      color: #000;
+    }
+    #styled::shadow core-icon{
+      width: 50px;
+      height: 50px;
+    }
+    #styled::shadow .active{
+      color: #a4c639;
+    }
+    #custom-active{
+      color: #f00;
+    }
+    #tripadvisor{
+      color: #589442;
+    }
+    #tripadvisor::shadow .active{
+      color: #589442;
+    }
+  </style>
+</head>
+<body unresolved>
+
+  <h2>icon-rating usage</h2>
+
+  <h3>Basic</h3>
+  <icon-rating value=3 ></icon-rating>
+
+  <h3>Custom number of stars</h3>
+  <icon-rating max=10 value=3 ></icon-rating>
+
+  <h3>Changed icon</h3>
+  <icon-rating value=4 icon="favorite"></icon-rating>
+
+  <h3>Custom active icon</h3>
+  <icon-rating id="custom-active" value=2 icon="favorite-outline" activeIcon="favorite"></icon-rating>
+
+  <h3>Styled</h3>
+  <icon-rating id="styled" value=4 icon="favorite" size=40></icon-rating>
+
+  <h3>Custom svg icon (<a href="http://www.polymer-project.org/docs/elements/icons.html#roll-your-own">source</a>)</h3>
+  <core-iconset-svg id="custom-icons" iconSize="50">
+    <svg>
+      <defs>
+        <g id="fancy-circles">
+          <circle cx="25" cy="25" r="18" />
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="35" cy="40" r="6" />
+        </g>
+      </defs>
+    </svg>
+  </core-iconset-svg>
+  <icon-rating value=4 icon="custom-icons:fancy-circles"></icon-rating>
+
+  <core-iconset-svg id="tripadvisor" iconSize="100">
+    <svg>
+      <defs>
+        <g id="icon"><path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M50,90c-22.1,0-40-17.9-40-40s17.9-40,40-40s40,17.9,40,40S72.1,90,50,90z"/></g>
+        <g id="active-icon">
+        	<path d="M50,0C22.4,0,0,22.4,0,50s22.4,50,50,50s50-22.4,50-50S77.6,0,50,0z M50,90c-22.1,0-40-17.9-40-40
+        		s17.9-40,40-40s40,17.9,40,40S72.1,90,50,90z"/>
+        	<circle cx="50" cy="50" r="30"/>
+        </g>
+      </defs>
+    </svg>
+  </core-iconset-svg>
+
+  <h3>Tripadvisor style</h3>
+  <icon-rating id="tripadvisor" value="3" icon="tripadvisor:icon" activeIcon="tripadvisor:active-icon"></icon-rating>
+
+
+</body>
+</html>

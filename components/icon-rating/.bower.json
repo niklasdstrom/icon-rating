@@ -1,0 +1,29 @@
+{
+  "name": "icon-rating",
+  "keywords": [
+    "seed",
+    "polymer",
+    "web-components"
+  ],
+  "main": "icon-rating.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.3.5",
+    "core-icon": "Polymer/core-icon#~0.3.5",
+    "core-icons": "Polymer/core-icons#~0.3.5"
+  },
+  "devDependencies": {
+    "core-iconset": "Polymer/core-iconset#~0.3.5",
+    "core-iconset-svg": "Polymer/core-iconset-svg#~0.3.5"
+  },
+  "homepage": "https://github.com/niklasdstrom/icon-rating",
+  "_release": "ae5697829f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "ae5697829f65c3acc7d6eaed922f243e0333e028"
+  },
+  "_source": "git://github.com/niklasdstrom/icon-rating.git",
+  "_target": "master",
+  "_originalSource": "niklasdstrom/icon-rating",
+  "_direct": true
+}
